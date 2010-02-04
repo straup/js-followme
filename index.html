@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>follow me around</title>
+    <link rel="stylesheet" href="followme.css" type="text/css" />
+    <script type="text/javascript" src="followme.js"></script>
+    <script type="text/javascript" src="geolocation.js"></script>
+    <meta name="viewport" content="width=340" />
+  </head>
+  <body onload="javascript:followme();">
+    <div id="main">
+      <div id="status">
+      </div>
+      <div id="map"></div>
+      <div id="location">
+      </div>
+      <div id="controls">
+	<a href="#" onclick="javascript:export_history();return false;" id="export">EXPORT</a>
+	<br /><br />
+	<a href="#" onclick="javascript:purge_history();return false;" id="purge">PURGE</a>
+      </div>
+    </div>
+
+    <div id="footer">
+      this is a thing made by <a href="http://www.aaronland.info/">aaron straup cope</a>
+    </div>
+
+  </body>
+</html>

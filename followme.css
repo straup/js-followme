@@ -1,0 +1,67 @@
+body{
+    font-family:sans-serif;
+    padding:20px;
+    margin-right:20px;
+    font-weight:700;
+    color:#999;
+    font-size:1.15em;
+    max-width:340px;
+}
+
+#iamhere{
+    font-weight:700;
+    font-size:48pt;
+    color:#666;
+}
+
+#iamhere a {
+    text-decoration:none;
+    color:red;
+}
+
+#coords{
+    font-size:24pt;
+    display:block;
+    text-align:right;
+    margin-top:15px;
+    padding-right:20px;
+}
+
+#map {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#map_img {
+    border:8px solid #ccc;;
+    padding:4px;
+}
+
+#location {
+`
+}
+
+#controls {
+    display:none;
+    font-size:small;
+    margin-top:60px;
+    text-align:right;
+}
+
+#export{
+    font-size: 1.5em;
+    color:#666;
+}
+
+#purge {
+    color:red;
+}
+
+#footer {
+    font-size:small;
+    text-align:right;
+    border-top:1px dotted #ccc;
+    margin-top:20px;
+    padding-top:25px;
+    font-weight:auto;
+}
