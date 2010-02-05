@@ -8,6 +8,14 @@ body{
     max-width:340px;
 }
 
+#reload{
+    margin-left:20px;
+}
+
+#reload a img {
+    border: none;
+}
+
 #iamhere{
     font-weight:700;
     font-size:48pt;

@@ -2,7 +2,14 @@ var iters = 0;
 var polling = 0;
 var trigger = null;
 
-var goog = 'YOUR_GOOGLEMAPS_APIKEY';
+function refresh(){
+
+    if (trigger){
+	clearTimeout(trigger);
+    }
+
+    followme();
+}
 
 function followme(purge){
 
@@ -84,7 +91,7 @@ function followme(purge){
     loc.findMyLocation(doThisOnSuccess, doThisIfNot);
 
     var one_min = 60000;
-    var delay = one_min * 2;
+    var delay = one_min * 1.5;
 
     trigger = setTimeout(function(){
 	    followme();
@@ -108,6 +115,12 @@ function display_location(lat, lon, d){
 
     var html = '<a href="geo:' + pt + '">' + pt + '</a>';
 
+    html += '<span id="reload">';
+    html += '<a href="#" onclick="javascript:refresh();return false;">';
+    html += '<img src="images/reload.png" />';
+    html += '</a>';
+    html += '</span>';
+
     var container = document.getElementById("location");
     container.innerHTML = html;
 }
@@ -121,7 +134,7 @@ function display_map(lat, lon, coords){
 
     var src = 'http://maps.google.com/maps/api/staticmap?center=' + lat + ',' + lon;
     src += '&path=color:0x0000ff|weight:5' + path;
-    src += '&size=' + dims + 'x' + dims + '&sensor=false&key=' + goog;
+    src += '&size=' + dims + 'x' + dims + '&sensor=false&key=' + api_goog;
     src += '&zoom=15&markers=size:mid|color:white|' + pt;
     //src += '&mobile=true';
 
@@ -235,11 +248,6 @@ function purge_history(){
     }
 
     if (ok){
-
-	if (trigger){
-	    clearTimeout(trigger);
-	}
-
-	location.href = '/followme';
+	refresh();
     }
 }
